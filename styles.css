@@ -219,4 +219,12 @@ nav .logoutBtn {
   margin-left: 12px;
 }
 
+.msg-me {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  justify-content: flex-end;
+}
+
 /*# sourceMappingURL=styles.css.map */

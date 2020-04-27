@@ -19,7 +19,7 @@
   <?php
   if(isset($_SESSION['userUid'])){
     //  $uid = $_SESSION['userUid'];
-     echo "<input type='hidden' class='activeHidden' id=".$_POST['id']." >";
+     echo "<input type='hidden' class='activeHidden' data-active=".$_SESSION['activeChat']."  data-logged= ".$_SESSION['userUid']." >";
     } else {
         echo"<p>you are logged out</p>";
       }
@@ -46,5 +46,7 @@
   require 'footer.php'
 ?>
 <script>
-let activeChat = $('.activeHidden')[0].id;
+ let activeChat =  $('.activeHidden')[0].dataset.active;
+ let logged = $('.activeHidden')[0].dataset.logged;
+// let activeChat = $('.activeHidden')[0].id;
 </script>

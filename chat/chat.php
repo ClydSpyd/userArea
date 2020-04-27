@@ -28,8 +28,9 @@ if(!empty($message) && !empty($from)){
 
 $start = isset($_GET['start']) ? intval($_GET['start']) : 0;
 $active = $_SESSION['activeChat'];
+$logged = $_SESSION['userUid'];
 
-$items = $connDB->query("SELECT * FROM `chat01` WHERE `from` = '".$active."' " );
+$items = $connDB->query("SELECT * FROM `chat01` WHERE (`from` = '".$active."' AND `to` = '".$logged."') OR (`to` = '".$active."' AND `from` = '".$logged."')" );
 
 
 while($row = $items->fetch_assoc()){
