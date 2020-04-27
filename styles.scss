@@ -1,0 +1,220 @@
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+@mixin flexCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+//VARIABLES
+$mainBlue: #50c9f5;
+
+//COMMON STYLES
+body{
+  padding: 0;
+  margin: 0;
+  background-color: rgb(243, 243, 243);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+button{
+  font-size: 12px;
+  width:70px;
+  height:25px;
+  background-color: $mainBlue;
+  color: white;
+  cursor: pointer;
+  margin:5px 1px;
+}
+input{
+  width:130px;
+  height:20px;
+  padding-left: 5px;;
+}
+
+
+//NAV ELEMENTS
+nav{
+  background-color: white;
+  @include flexRow();
+  justify-content: space-between;
+  padding:10px;
+
+    .navLeft{
+      @include flexRow();
+    }
+    a{
+      color:$mainBlue;
+      text-decoration: none;
+    }
+    a:hover{
+      text-decoration: underline;
+    }
+    img{
+      width:85px;
+    };
+    li{
+      display: inline;
+      margin:20px;
+    }
+    .logoutBtn{
+      margin:0 30px;
+    }
+}
+
+.loginWrapper{
+  position: relative;
+}
+
+.errorMsg{
+  position: absolute;
+  left:50px;
+  font-size: 12px;
+  color: red;
+}
+
+.loginForm{
+  @include flexRow();
+  padding:0 50px;
+
+    a{
+      font-size: 12px;
+      width:70px;
+      text-align: center;
+      border: 1px solid rgba(128, 128, 128, 0.315);
+      height:23px;
+      line-height: 23px;
+      margin:0 1px;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+}
+
+//BODY ELEMENTS
+.wrapperMain{
+  @include flexCol();
+  padding-top:10px;
+  width:100%;
+  height:calc(100% - 105px);
+  color: $mainBlue;
+}
+
+.signupFormMain{
+  @include flexCol();
+  width:50%;
+  background-color: white;
+  padding:20px;
+
+  h3{
+    margin:0 0 10px 0;
+  }    
+  h5{
+    margin: 15px 0;
+    // color: yellowgreen;
+    color: red;
+    // color: orangered;
+    font-weight: 400;
+  }
+  form{
+    @include flexCol();
+    input{
+      margin:1px 0;
+      width:250px;
+    }
+  }
+  .success{
+    color: chartreuse;
+  }
+  
+}
+
+// USER GRID
+
+#users {
+  @include flexCol();
+  width:60%;
+
+  .user{
+    height:30px;
+    width:150px;
+    @include flexRow();
+    justify-content: space-between;
+  }
+  h5{
+    color: chartreuse;
+    margin:15px 0 10px 0 ;
+  } 
+  button {
+    width: 50px;
+    margin-left: 10px;
+    cursor: pointer;
+    &:hover{
+      text-decoration: underline;
+    }
+  }  
+}
+
+//CHAT PAGE
+
+.chatWrapper{
+  @include flexRow();
+  background-color:rgb(231, 231, 231);
+  // height: 100%;
+  width:100%;
+  position: absolute;
+  top:105px;
+  height:calc(100% - 105px);
+  padding: 2px;
+}
+.chatLeft{
+  // border:1px solid rgba(0, 0, 0, 0.288);
+  width:25%;
+  height:100%;
+  background-color: white;
+}
+.chatRight{
+  @include flexCol();
+  // border:1px solid rgba(0, 0, 0, 0.288);
+  width:75%;
+  height:100%;
+  // background-color: rgba(128, 255, 0, 0.527);;
+}
+.chatMain{
+  width:100%;
+  height:90%;
+  // border:1px solid rgba(0, 0, 0, 0.288);
+  color: white;
+  overflow: scroll;
+  margin:3px;
+}
+.chatMsgBox{
+  // margin-left:5px;
+  background-color: white;
+  width:99.5%;
+  height: 10%;
+}
+
+.msg{
+  background-color: $mainBlue;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin:8px;
+  width:fit-content;
+  font-size: 14px;
+}
+.msg p {
+  color:rgb(63, 159, 219);
+  margin:0;
+  font-size: 12px;
+  font-weight: bold;
+}
+.msg span{
+  font-size:8px;
+  margin-left: 12px;
+}
